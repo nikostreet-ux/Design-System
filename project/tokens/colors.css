@@ -1,0 +1,52 @@
+:root{
+/* --- Corporativos (Manual de Marca, pág. 6) --- */
+--rosen-slate:#38484E;      /* Pantone 432C — color del logotipo */
+--rosen-red:#C12637;        /* Pantone 200C — acento de marca */
+--rosen-mist:#CDD2D1;       /* Pantone 427CP */
+--rosen-stone:#7C8886;      /* Pantone 430C */
+--rosen-black:#000000;      /* Pantone Black 6C */
+
+/* --- Grises web/digital (Manual de Marca, pág. 9) --- */
+--gray-10:#F5F5F5;
+--gray-40:#EEEEEE;
+--gray-60:#CCCCCC;
+--gray-rosen:#4C4C4C;
+--white:#FFFFFF;
+
+/* --- Derivados (oklch sobre los corporativos, solo para estados) --- */
+--rosen-slate-hover:oklch(from var(--rosen-slate) calc(l - .05) c h);
+--rosen-slate-press:oklch(from var(--rosen-slate) calc(l - .1) c h);
+--rosen-slate-08:oklch(from var(--rosen-slate) l c h / .08);
+--rosen-red-hover:oklch(from var(--rosen-red) calc(l - .05) c h);
+--rosen-red-press:oklch(from var(--rosen-red) calc(l - .1) c h);
+--rosen-red-08:oklch(from var(--rosen-red) l c h / .08);
+
+/* --- Alias semánticos --- */
+--text-heading:var(--rosen-slate);
+--text-body:var(--gray-rosen);
+--text-muted:var(--rosen-stone);
+--text-inverse:var(--white);
+--text-price:var(--rosen-slate);
+--text-sale:var(--rosen-red);
+--text-link:var(--rosen-slate);
+--text-link-hover:var(--rosen-red);
+
+--surface-page:var(--white);
+--surface-subtle:var(--gray-10);
+--surface-alt:var(--gray-40);
+--surface-card:var(--white);
+--surface-inverse:var(--rosen-slate);
+--surface-accent:var(--rosen-red);
+--surface-overlay:oklch(from var(--rosen-slate) l c h / .55);
+
+--border-subtle:var(--gray-40);
+--border-default:var(--gray-60);
+--border-strong:var(--rosen-mist);
+--border-focus:var(--rosen-slate);
+
+--accent:var(--rosen-red);
+--accent-quiet:var(--rosen-red-08);
+--status-sale:var(--rosen-red);
+--status-info:var(--rosen-slate);
+--status-neutral:var(--rosen-stone);
+}

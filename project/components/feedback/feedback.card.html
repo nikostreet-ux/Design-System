@@ -1,0 +1,27 @@
+<!-- @dsCard group="Components" viewport="700x340" name="Feedback" subtitle="Dialog, Toast, Tooltip" -->
+<!doctype html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css"><style>body{padding:24px;background:var(--white)}#root{display:block}</style></head><body><div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const { Dialog, Toast, Tooltip, Button, Icon } = window.RosenDesignSystem_99eac3;
+function Demo(){
+  const [open,setOpen]=React.useState(false);
+  return <div style={{display:'grid',gap:20}}>
+    <div style={{display:'flex',gap:16,alignItems:'center'}}>
+      <Button variant="secondary" onClick={()=>setOpen(true)}>Abrir modal</Button>
+      <Tooltip content="Firmeza media-alta"><span style={{display:'inline-flex',alignItems:'center',gap:6,fontSize:14}}><Icon name="info" size={16}/> Tooltip en hover</span></Tooltip>
+    </div>
+    <div style={{display:'flex',gap:16,flexWrap:'wrap'}}>
+      <Toast tone="info" title="Cotización enviada" description="Te responderemos en 24 h hábiles" onClose={()=>{}}/>
+      <Toast tone="sale" title="Últimas 3 unidades" description="Colchón Élite Pocket 2 plazas" onClose={()=>{}}/>
+    </div>
+    <Dialog open={open} title="Producto agregado" onClose={()=>setOpen(false)}
+      footer={<><Button variant="ghost" onClick={()=>setOpen(false)}>Seguir viendo</Button><Button onClick={()=>setOpen(false)}>Ir al carro</Button></>}>
+      Colchón Élite Pocket 2 plazas · 1 unidad
+    </Dialog>
+  </div>;
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script></body></html>

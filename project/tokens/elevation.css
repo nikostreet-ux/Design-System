@@ -1,0 +1,8 @@
+:root{
+--shadow-none:none;
+--shadow-xs:0 1px 2px oklch(from var(--rosen-slate) l c h / .06);
+--shadow-sm:0 2px 8px oklch(from var(--rosen-slate) l c h / .07);
+--shadow-md:0 6px 20px oklch(from var(--rosen-slate) l c h / .09);
+--shadow-lg:0 18px 48px oklch(from var(--rosen-slate) l c h / .12);
+--shadow-focus:0 0 0 2px var(--white),0 0 0 4px var(--rosen-slate);
+}

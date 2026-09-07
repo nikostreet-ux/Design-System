@@ -1,0 +1,5 @@
+/* Inter — la única familia tipográfica de la marca Rosen.
+   Servida desde Google Fonts (fuente original del manual: Inter).
+   Pesos usados: 300 Light (por defecto) y 500 Medium (precios, subtítulos). */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+:root{--font-sans:"Inter","Helvetica Neue",Arial,sans-serif}

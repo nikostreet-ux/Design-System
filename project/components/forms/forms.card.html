@@ -1,0 +1,29 @@
+<!-- @dsCard group="Components" viewport="700x360" name="Forms" subtitle="Input, Textarea, Select, Checkbox, Radio, Switch" -->
+<!doctype html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css"><style>body{padding:24px;background:var(--white)}#root{display:block}</style></head><body><div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const { Input, Textarea, Select, Checkbox, Radio, Switch, Icon } = window.RosenDesignSystem_99eac3;
+function Demo(){
+  const [c,setC]=React.useState(true),[s,setS]=React.useState(true),[r,setR]=React.useState('a');
+  return <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:20}}>
+    <div style={{display:'grid',gap:16}}>
+      <Input label="Correo" placeholder="nombre@empresa.cl" iconRight={<Icon name="mail" size={16}/>}/>
+      <Input label="RUT" value="12.345.678-" error="RUT incompleto"/>
+      <Select label="Ordenar por" options={['Recomendados','Menor precio','Mayor precio']}/>
+    </div>
+    <div style={{display:'grid',gap:16,alignContent:'start'}}>
+      <Textarea label="Comentarios de la entrega" rows={3} placeholder="Piso, depto, referencia…"/>
+      <div style={{display:'grid',gap:10}}>
+        <Checkbox label="Colchones (24)" checked={c} onChange={()=>setC(!c)}/>
+        <Radio name="e" label="Despacho a domicilio" checked={r==='a'} onChange={()=>setR('a')}/>
+        <Radio name="e" label="Retiro en tienda" checked={r==='b'} onChange={()=>setR('b')}/>
+        <Switch label="Solo con stock" checked={s} onChange={()=>setS(!s)}/>
+      </div>
+    </div>
+  </div>;
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script></body></html>

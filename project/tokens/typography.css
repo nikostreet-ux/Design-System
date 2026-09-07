@@ -1,0 +1,27 @@
+:root{
+/* Escala del manual — todos los títulos en Inter Light */
+--title-1:60px;
+--title-2:48px;
+--title-3:36px;
+--title-4:24px;
+--title-5:18px;
+--body-lg:18px;
+--body:16px;
+--body-sm:14px;
+--caption:12px;
+--overline:11px;
+
+--weight-light:300;   /* por defecto: títulos ≥18px, párrafos, nombres de producto */
+--weight-regular:400;
+--weight-medium:500;  /* precios en tarjetas y subtítulos pequeños 14–16px */
+
+--leading-tight:1.1;
+--leading-snug:1.25;
+--leading-normal:1.5;
+--leading-relaxed:1.7;
+
+--tracking-tight:-0.02em;
+--tracking-normal:0;
+--tracking-wide:0.08em;
+--tracking-widest:0.22em; /* titulares tipo "M A N U A L D E M A R C A" */
+}

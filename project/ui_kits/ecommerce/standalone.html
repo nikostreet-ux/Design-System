@@ -1,0 +1,79 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Rosen · Tienda</title>
+<link rel="stylesheet" href="../../styles.css">
+<meta name="ext-resource-dependency" content="../../assets/logo-rosen-slate.png" data-resource-id="logoDark" />
+<meta name="ext-resource-dependency" content="../../assets/logo-rosen-white.png" data-resource-id="logoWhite" />
+<meta name="ext-resource-dependency" content="https://unpkg.com/lucide-static@0.544.0/icons/search.svg" data-resource-id="icon-search" />
+<meta name="ext-resource-dependency" content="https://unpkg.com/lucide-static@0.544.0/icons/map-pin.svg" data-resource-id="icon-map-pin" />
+<meta name="ext-resource-dependency" content="https://unpkg.com/lucide-static@0.544.0/icons/user.svg" data-resource-id="icon-user" />
+<meta name="ext-resource-dependency" content="https://unpkg.com/lucide-static@0.544.0/icons/shopping-bag.svg" data-resource-id="icon-shopping-bag" />
+<meta name="ext-resource-dependency" content="https://unpkg.com/lucide-static@0.544.0/icons/chevron-right.svg" data-resource-id="icon-chevron-right" />
+<meta name="ext-resource-dependency" content="https://unpkg.com/lucide-static@0.544.0/icons/truck.svg" data-resource-id="icon-truck" />
+<meta name="ext-resource-dependency" content="https://unpkg.com/lucide-static@0.544.0/icons/store.svg" data-resource-id="icon-store" />
+<meta name="ext-resource-dependency" content="https://unpkg.com/lucide-static@0.544.0/icons/shield-check.svg" data-resource-id="icon-shield-check" />
+<meta name="ext-resource-dependency" content="https://unpkg.com/lucide-static@0.544.0/icons/wrench.svg" data-resource-id="icon-wrench" />
+<meta name="ext-resource-dependency" content="https://unpkg.com/lucide-static@0.544.0/icons/mail.svg" data-resource-id="icon-mail" />
+<meta name="ext-resource-dependency" content="https://unpkg.com/lucide-static@0.544.0/icons/minus.svg" data-resource-id="icon-minus" />
+<meta name="ext-resource-dependency" content="https://unpkg.com/lucide-static@0.544.0/icons/plus.svg" data-resource-id="icon-plus" />
+<meta name="ext-resource-dependency" content="https://unpkg.com/lucide-static@0.544.0/icons/tag.svg" data-resource-id="icon-tag" />
+<style>body{background:var(--white)}#root{min-height:100vh}</style></head><body>
+<template id="__bundler_thumbnail" data-bg-color="#38484E">
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#38484E"/><rect x="330" y="330" width="420" height="140" rx="70" fill="none" stroke="#FFFFFF" stroke-width="26"/><rect x="820" y="0" width="380" height="266" fill="#CDD2D1"/><rect x="820" y="266" width="380" height="267" fill="#7C8886"/><rect x="820" y="533" width="380" height="267" fill="#C12637"/></svg>
+</template>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script>
+(function(){
+var NS=window.RosenDesignSystem_99eac3,R=window.React;
+var res=function(id,fb){var m=window.__resources;return(m&&m[id])||fb};
+NS.Logo=function(p){p=p||{};var t=p.tone==='white'?'logoWhite':'logoDark';
+  var fb=p.tone==='white'?'../../assets/logo-rosen-white.png':'../../assets/logo-rosen-slate.png';
+  var st=Object.assign({width:p.width||140,height:'auto'},p.style||{});
+  return R.createElement('img',{src:res(t,fb),alt:'rosen',style:st})};
+var cache={};
+NS.Icon=function(p){
+  var name=p.name,size=p.size||20,sw=p.strokeWidth||1.5;
+  var url=res('icon-'+name,'https://unpkg.com/lucide-static@0.544.0/icons/'+name+'.svg');
+  var st=R.useState(cache[name]||null),svg=st[0],set=st[1];
+  R.useEffect(function(){
+    if(cache[name]){set(cache[name]);return}
+    var live=true;
+    fetch(url).then(function(r){return r.ok?r.text():''}).then(function(t){cache[name]=t;if(live)set(t)}).catch(function(){});
+    return function(){live=false}
+  },[name,url]);
+  var inner=svg?svg.replace(/width="24"/,'width="'+size+'"').replace(/height="24"/,'height="'+size+'"').replace(/stroke-width="2"/,'stroke-width="'+sw+'"'):'';
+  return R.createElement('span',{'aria-hidden':true,style:Object.assign({display:'inline-flex',width:size,height:size,color:p.color||'currentColor',flex:'0 0 auto'},p.style||{}),dangerouslySetInnerHTML:{__html:inner}})};
+})();
+</script>
+<script type="text/babel" src="Chrome.jsx"></script>
+<script type="text/babel" src="Home.jsx"></script>
+<script type="text/babel" src="Catalog.jsx"></script>
+<script type="text/babel" src="Product.jsx"></script>
+<script type="text/babel" src="Cart.jsx"></script>
+<script type="text/babel" data-presets="react">
+(function(){
+const { Dialog, Button } = window.RosenDesignSystem_99eac3;
+function App(){
+  const [view,setView]=React.useState('home');
+  const [cart,setCart]=React.useState(1);
+  const [added,setAdded]=React.useState(false);
+  React.useEffect(()=>{window.scrollTo(0,0)},[view]);
+  const add=()=>{setCart(c=>c+1);setAdded(true)};
+  return <div>
+    <Header onNav={setView} cart={cart}/>
+    {view==='home'&&<Home onNav={setView}/>}
+    {view==='catalog'&&<Catalog onNav={setView}/>}
+    {view==='product'&&<Product onNav={setView} addToCart={add}/>}
+    {view==='cart'&&<Cart onNav={setView}/>}
+    <Footer/>
+    <Dialog open={added} title="Producto agregado" onClose={()=>setAdded(false)}
+      footer={<><Button variant="ghost" onClick={()=>setAdded(false)}>Seguir viendo</Button><Button onClick={()=>{setAdded(false);setView('cart')}}>Ir al carro</Button></>}>
+      Colchón Élite Pocket · 1 unidad agregada a tu carro.
+    </Dialog>
+  </div>;
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+})();
+</script></body></html>
